@@ -253,7 +253,30 @@ class Startup
 
     public function requestTransfer()
     {
-        //SEM REQUEST TRANSFER
+        header('Content-Type: application/json; charset=utf-8');
+        
+        // Cria o RequestTransfer
+        $requestTransfer = new ProdutoCaracteristicaHomeRequestTransfer();
+        
+        $requestTransfer->setProjeto('ecommerce');
+        $requestTransfer->setPacote('produto');
+        $requestTransfer->setModulo('caracteristica');
+        $requestTransfer->setPagina('home');
+        $requestTransfer->setAcao('selecionar');
+        $requestTransfer->setCampo('status');
+        $requestTransfer->setValor('ativo');
+        
+        $dados = [
+            'projeto' => $requestTransfer->getProjeto(),
+            'pacote' => $requestTransfer->getPacote(),
+            'modulo' => $requestTransfer->getModulo(),
+            'pagina' => $requestTransfer->getPagina(),
+            'acao' => $requestTransfer->getAcao(),
+            'campo' => $requestTransfer->getCampo(),
+            'valor' => $requestTransfer->getValor()
+        ];
+        
+        return json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
     }
 
     public function transfer()
