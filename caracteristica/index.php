@@ -52,8 +52,16 @@ class Startup
             return $this->request();
         }
 
+        if ($teste === 'requestTransfer') {
+            return $this->requestTransfer();
+        }
+
         if ($teste === 'response') {
             return $this->response();
+        }
+
+        if ($teste === 'responseTransfer') {
+            return $this->responseTransfer();
         }
 
         if ($teste === 'service') {
@@ -178,33 +186,6 @@ class Startup
         return json_encode($lista, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
     }   
 
-    public function request()
-    {
-        //SEM REQUEST
-    }
-
-    public function transfer()
-    {
-        header('Content-Type: application/json; charset=utf-8');
-        $mockupDados = ProdutoCaracteristicaHomeMockup::retornarItem();
-        $objetoLista = new ProdutoCaracteristicaHomeTransfer($mockupDados);
-
-        $dados = [
-            'id' => $objetoLista->getId(),
-            'codigo' => $objetoLista->getCodigo(),
-            'url' => $objetoLista->getUrl(),
-            'nome' => $objetoLista->getNome(),
-            'descricao' => $objetoLista->getDescricao(),
-            'data_criacao' => $objetoLista->getDataCriacao(),
-            'data_expiracao' => $objetoLista->getDataExpiracao(),
-            'publicar' => $objetoLista->getPublicar(),
-            'categoria_id' => $objetoLista->getCategoriaId(),
-            'loja_id' => $objetoLista->getLojaId()
-        ];
-
-        return json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-    }
-
     public function responseTransfer()
     {
         header('Content-Type: application/json; charset=utf-8');
@@ -249,9 +230,52 @@ class Startup
         return json_encode($lista, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
     }
 
+    public function request()
+    {   
+        header('Content-Type: application/json; charset=utf-8');
+        $requestTransfer = new ProdutoCaracteristicaHomeRequestTransfer();
+    
+        $request = new ProdutoCaracteristicaHomeRequest();
+        $requestTransfer = $request->build($requestTransfer);
+        
+        $dados = [
+            'projeto' => $requestTransfer->getProjeto(),
+            'pacote' => $requestTransfer->getPacote(),
+            'modulo' => $requestTransfer->getModulo(),
+            'pagina' => $requestTransfer->getPagina(),
+            'acao' => $requestTransfer->getAcao(),
+            'campo' => $requestTransfer->getCampo(),
+            'valor' => $requestTransfer->getValor()
+        ];
+        
+        return json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+    }
+
     public function requestTransfer()
     {
-        
+        //SEM REQUEST TRANSFER
+    }
+
+    public function transfer()
+    {
+        header('Content-Type: application/json; charset=utf-8');
+        $mockupDados = ProdutoCaracteristicaHomeMockup::retornarItem();
+        $objetoLista = new ProdutoCaracteristicaHomeTransfer($mockupDados);
+
+        $dados = [
+            'id' => $objetoLista->getId(),
+            'codigo' => $objetoLista->getCodigo(),
+            'url' => $objetoLista->getUrl(),
+            'nome' => $objetoLista->getNome(),
+            'descricao' => $objetoLista->getDescricao(),
+            'data_criacao' => $objetoLista->getDataCriacao(),
+            'data_expiracao' => $objetoLista->getDataExpiracao(),
+            'publicar' => $objetoLista->getPublicar(),
+            'categoria_id' => $objetoLista->getCategoriaId(),
+            'loja_id' => $objetoLista->getLojaId()
+        ];
+
+        return json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
     }
 
     public function mockup()
