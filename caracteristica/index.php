@@ -207,7 +207,46 @@ class Startup
 
     public function responseTransfer()
     {
+        header('Content-Type: application/json; charset=utf-8');
 
+        $responseTransfer = new ProdutoCaracteristicaHomeResponseTransfer;
+        $mockupLista = ProdutoCaracteristicaHomeMockup::retornarLista();
+        $mockupItem = ProdutoCaracteristicaHomeMockup::retornarItem();
+        
+        $response = new ProdutoCaracteristicaHomeResponse();
+        $responseLista = $response->receberSelecionar($mockupLista, $responseTransfer);
+        
+        $chaves = array_keys($mockupItem); 
+
+        $lista = [];
+
+        foreach ($responseLista as $objeto) {
+
+            $item = [];
+
+            foreach ($chaves as $chave) {
+
+                $normalizada = str_replace('-', '_', $chave);
+
+                $partes = explode('_', $normalizada);
+
+                $metodo = 'get' . ucfirst(array_shift($partes));
+
+                foreach ($partes as $parte) {
+                    $metodo .= ucfirst($parte);
+                }
+
+                if (method_exists($objeto, $metodo)) {
+                    $item[$chave] = $objeto->$metodo();
+                } else {
+                    $item[$chave] = null;
+                }
+            }
+
+            $lista[] = $item;
+        }
+
+        return json_encode($lista, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
     }
 
     public function requestTransfer()
