@@ -25,15 +25,14 @@ class ProdutoCategoriaHomeResponse {
 
                     $transferItem->setId($item['id']);
                     $transferItem->setNome($item['nome']);
+                    $transferItem->setSlug($item['slug']);
                     $transferItem->setDescricao($item['descricao']);
+                    $transferItem->setIcone($item['icone']);
                     $transferItem->setDataCriacao($item['data_criacao']);
-                    $transferItem->setDataExpiracao($item['data_expiracao']);
-                    $transferItem->setPublicar($item['publicar']);
-                    $transferItem->setCategoriaId($item['categoria_id']);
-                    $transferItem->setLojaId($item['loja_id']);
+                    $transferItem->setAtivo($item['ativo']);
 
                     $itens[] = $transferItem;
-                }
+                } 
 
                 $resultado = $itens;
             }
