@@ -4,11 +4,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once 'mockup/ProdutoCategoriaHomeMockup.php';
+require_once 'mockup/ProdutoCashbackHomeMockup.php';
 
 require_once '../includes/interfaces/ProdutoHomeTransferInterface.php';
-require_once 'transfer/ProdutoCategoriaHomeTransfer.php';
-require_once 'mockup/ProdutoCategoriaHomeMockup.php';
+require_once 'transfer/ProdutoCashbackHomeTransfer.php';
+require_once 'mockup/ProdutoCashbackHomeMockup.php';
 
 class Startup
 {
@@ -20,7 +20,7 @@ class Startup
         if ($teste === 'mockup') {
             
             header('Content-Type: application/json; charset=utf-8');
-            $dados = ProdutoCategoriaHomeMockup::pesquisarDados();
+            $dados = ProdutoCashbackHomeMockup::pesquisarDados();
             return json_encode($dados, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
         }
@@ -28,8 +28,8 @@ class Startup
         if ($teste === 'transfer') {
 
             header('Content-Type: application/json; charset=utf-8');
-            $mockupDados = ProdutoCategoriaHomeMockup::pesquisarDados();
-            $objetoLista = new ProdutoCategoriaHomeTransfer($mockupDados);
+            $mockupDados = ProdutoCashbackHomeMockup::pesquisarDados();
+            $objetoLista = new ProdutoCashbackHomeTransfer($mockupDados);
 
             $dados = [
                 'id' => $objetoLista->getId(),
