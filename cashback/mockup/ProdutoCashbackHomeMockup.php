@@ -99,7 +99,7 @@ class ProdutoCashbackHomeMockup
                 'categoria_id' => 2,
                 'loja_id' => 3
             ],
-            [
+            [ 
                 'id' => 9,
                 'nome' => 'Cashback Madrugada',
                 'descricao' => 'Compras entre 00h e 06h ganham 9% de cashback extra.',

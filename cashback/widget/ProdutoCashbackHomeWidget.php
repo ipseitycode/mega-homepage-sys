@@ -11,20 +11,18 @@ class ProdutoCashbackHomeWidget {
     public function visualizarSelecionar(): string
     {
 
-        $lista = [];
+        $lista = []; 
 
         foreach ($this->responseTransfer as $objeto) {
             $lista[] = [
                 'id' => $objeto->getId(),
-                'cor' => $objeto->getCor(),
-                'peso' => $objeto->getPeso(),
-                'dimensoes' => $objeto->getDimensoes(),
-                'material' => $objeto->getMaterial(),
-                'conectividade' => $objeto->getConectividade(),
-                'autonomia_bateria' => $objeto->getAutonomiaBateria(),
-                'tempo_carregamento' => $objeto->getTempoCarregamento(),
-                'garantia' => $objeto->getGarantia(),
-                'conteudo_embalagem' => $objeto->getConteudoEmbalagem(),
+                'nome' => $objeto->getNome(),
+                'descricao' => $objeto->getDescricao(),
+                'data_criacao' => $objeto->getDataCriacao(),
+                'data_expiracao' => $objeto->getDataExpiracao(),
+                'publicar' => $objeto->getPublicar(),
+                'categoria_id' => $objeto->getCategoriaId(),
+                'loja_id' => $objeto->getLojaId()
             ];
         }
 
