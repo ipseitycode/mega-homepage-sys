@@ -1,11 +1,11 @@
 <?php
-class ProdutoCashbackHomeResponse { 
+class ProdutoCategoriaHomeResponse { 
     private $validator;
     private $mensagem = [];
 
     public function __construct() {
 
-        $this->validator = new ProdutoCashbackHomeValidator();
+        $this->validator = new ProdutoCategoriaHomeValidator();
     } 
 
     public function receberSelecionar($lista, $responseTransfer) 
@@ -39,7 +39,7 @@ class ProdutoCashbackHomeResponse {
             }
 
         } catch(Exception $e) {
-            $this->mensagem[] = ProdutoCashbackHomeException::incorreto(__METHOD__, 'response.incorreto=' . $e->getMessage());
+            $this->mensagem[] = ProdutoCategoriaHomeException::incorreto(__METHOD__, 'response.incorreto=' . $e->getMessage());
         }
             
         return $resultado;

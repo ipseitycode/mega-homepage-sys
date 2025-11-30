@@ -1,5 +1,5 @@
 <?php
-class ProdutoCashbackHomeValidator
+class ProdutoCategoriaHomeValidator
 {
 
     public function validarConsultaSQL($consulta = null): bool

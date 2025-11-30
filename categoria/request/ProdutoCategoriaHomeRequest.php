@@ -1,11 +1,11 @@
 <?php
-class ProdutoCashbackHomeRequest
+class ProdutoCategoriaHomeRequest
 {
     private $validator;
      
     public function __construct()
     {
-        $this->validator = new ProdutoCashbackHomeValidator(); 
+        $this->validator = new ProdutoCategoriaHomeValidator(); 
     }
 
     public function build($requestTransfer)

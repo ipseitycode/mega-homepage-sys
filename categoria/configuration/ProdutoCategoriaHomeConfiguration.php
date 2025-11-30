@@ -1,6 +1,6 @@
 <?php
 
-class ProdutoCashbackHomeConfiguration
+class ProdutoCategoriaHomeConfiguration
 {
     public function __construct()
     {

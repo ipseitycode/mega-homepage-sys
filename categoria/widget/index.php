@@ -4,10 +4,10 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //VALIDATOR
-require '../validator/ProdutoCashbackHomeValidator.php';
+require '../validator/ProdutoCategoriaHomeValidator.php';
 
 //EXCEPTION
-require '../exception/ProdutoCashbackHomeException.php';
+require '../exception/ProdutoCategoriaHomeException.php';
 
 //WIDGET
-require 'ProdutoCashbackHomeWidget.php';
+require 'ProdutoCategoriaHomeWidget.php';

@@ -1,5 +1,5 @@
 <?php
-class ProdutoCashbackHomeWidget {
+class ProdutoCategoriaHomeWidget {
 
     private $responseTransfer;
 

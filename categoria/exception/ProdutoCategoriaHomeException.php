@@ -1,6 +1,6 @@
 <?php
 
-class ProdutoCashbackHomeException
+class ProdutoCategoriaHomeException
 {
 
     public static function validarServico($servico)
@@ -29,7 +29,7 @@ class ProdutoCashbackHomeException
      */
     public static function parado($servico, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 202,
             'namespace' => "{$servico}.status.parado",
@@ -47,7 +47,7 @@ class ProdutoCashbackHomeException
      */
     public static function iniciado($servico, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 202,
             'namespace' => "{$servico}.status.iniciado",
@@ -65,7 +65,7 @@ class ProdutoCashbackHomeException
      */
     public static function concluido($servico, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 202,
             'namespace' => "{$servico}.status.concluido",
@@ -83,7 +83,7 @@ class ProdutoCashbackHomeException
      */
     public static function bloqueado($servico, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 404,
             'namespace' => "{$servico}.status.bloqueado",
@@ -101,7 +101,7 @@ class ProdutoCashbackHomeException
      */
     public static function cancelado($servico, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 404,
             'namespace' => "{$servico}.status.cancelado",
@@ -118,7 +118,7 @@ class ProdutoCashbackHomeException
      */
     public static function expirado($servico, $descricao = null)
     { 
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 404,
             'namespace' => "{$servico}.status.expirado",
@@ -136,7 +136,7 @@ class ProdutoCashbackHomeException
      */
     public static function existente($servico, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 409,
             'namespace' => "{$servico}.status.existente",
@@ -154,7 +154,7 @@ class ProdutoCashbackHomeException
      */
     public static function inexistente($servico, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 404,
             'namespace' => "{$servico}.status.inexistente",
@@ -172,7 +172,7 @@ class ProdutoCashbackHomeException
      */
     public static function correto($servico, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 200,
             'namespace' => "{$servico}.status.correto",
@@ -190,7 +190,7 @@ class ProdutoCashbackHomeException
      */
     public static function incorreto($servico, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         $descricao = is_string($descricao) ? $descricao : "";
 
         return [
@@ -210,7 +210,7 @@ class ProdutoCashbackHomeException
      */
     public static function removido($servico, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 409,
             'namespace' => "{$servico}.status.removido",
@@ -227,7 +227,7 @@ class ProdutoCashbackHomeException
      */
     public static function atualizado($servico, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 200,
             'namespace' => "{$servico}.status.atualizado",
@@ -245,7 +245,7 @@ class ProdutoCashbackHomeException
      */
     public static function localizado($servico, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 200,
             'namespace' => "{$servico}.status.localizado",
@@ -263,7 +263,7 @@ class ProdutoCashbackHomeException
      */
     public static function produzido($servico, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 200,
             'namespace' => "{$servico}.status.produzido",
@@ -281,7 +281,7 @@ class ProdutoCashbackHomeException
      */
     public static function conectado($servico, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 200,
             'namespace' => "{$servico}.status.conectado",
@@ -299,7 +299,7 @@ class ProdutoCashbackHomeException
      */
     public static function desconectado($servico, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 200,
             'namespace' => "{$servico}.status.desconectado",
@@ -316,7 +316,7 @@ class ProdutoCashbackHomeException
      */
     public static function generico($servico = null, $descricao = null)
     {
-        $servico = ProdutoCashbackHomeException::validarServico($servico);
+        $servico = ProdutoCategoriaHomeException::validarServico($servico);
         return [
             'codigo' => 500,
             'namespace' => "{$servico}.status.generico",

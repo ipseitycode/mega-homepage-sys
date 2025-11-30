@@ -1,6 +1,6 @@
 <?php
 
-class ProdutoCashbackHomeService
+class ProdutoCategoriaHomeService
 {
     private $validator;
     private $mockup;
@@ -11,11 +11,11 @@ class ProdutoCashbackHomeService
 
     public function __construct($requestTransfer) 
     {
-        $this->validator = new ProdutoCashbackHomeValidator();
-        $this->mockup = new ProdutoCashbackHomeMockup();
-        $this->response = new ProdutoCashbackHomeResponse();
+        $this->validator = new ProdutoCategoriaHomeValidator();
+        $this->mockup = new ProdutoCategoriaHomeMockup();
+        $this->response = new ProdutoCategoriaHomeResponse();
         $this->requestTransfer = $requestTransfer;
-        $this->responseTransfer = new ProdutoCashbackHomeResponseTransfer();
+        $this->responseTransfer = new ProdutoCategoriaHomeResponseTransfer();
     }
 
     public function executarSelecionar() 
@@ -35,16 +35,16 @@ class ProdutoCashbackHomeService
                         $resultado = $this->response->receberSelecionar($dadosLista, $this->responseTransfer);
 
                     } else {
-                        $this->mensagem[] = ProdutoCashbackHomeException::inexistente(__METHOD__, 'receberSelecionar.inexistente');
+                        $this->mensagem[] = ProdutoCategoriaHomeException::inexistente(__METHOD__, 'receberSelecionar.inexistente');
                     }
                 }
 
             } else {
-                $this->mensagem[] = ProdutoCashbackHomeException::inexistente(__METHOD__, 'retornarLista.inexistente');
+                $this->mensagem[] = ProdutoCategoriaHomeException::inexistente(__METHOD__, 'retornarLista.inexistente');
             }
 
         } catch (Exception $e) {
-            $this->mensagem[] = ProdutoCashbackHomeException::incorreto(__METHOD__, 'service.incorreto=' . $e->getMessage());
+            $this->mensagem[] = ProdutoCategoriaHomeException::incorreto(__METHOD__, 'service.incorreto=' . $e->getMessage());
         } 
 
         return $resultado;

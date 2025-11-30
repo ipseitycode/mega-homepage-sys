@@ -4,23 +4,23 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //VALIDATOR
-require '../validator/ProdutoCashbackHomeValidator.php';
+require '../validator/ProdutoCategoriaHomeValidator.php';
 
 //EXCEPTION
-require '../exception/ProdutoCashbackHomeException.php';
+require '../exception/ProdutoCategoriaHomeException.php';
 
 //TRANSFER
-require '../transfer/ProdutoCashbackHomeResponseTransfer.php';
-require '../transfer/ProdutoCashbackHomeRequestTransfer.php';
+require '../transfer/ProdutoCategoriaHomeResponseTransfer.php';
+require '../transfer/ProdutoCategoriaHomeRequestTransfer.php';
 
 //REQUEST 
-require '../request/ProdutoCashbackHomeRequest.php';
+require '../request/ProdutoCategoriaHomeRequest.php';
 
 //SERVICE
-require '../service/ProdutoCashbackHomeService.php';
+require '../service/ProdutoCategoriaHomeService.php';
 
 //VIEW
-require '../view/ProdutoCashbackHomeView.php';
+require '../view/ProdutoCategoriaHomeView.php';
 
 //CONTROLLER
-require 'ProdutoCashbackHomeController.php'; 
+require 'ProdutoCategoriaHomeController.php'; 

@@ -1,13 +1,13 @@
 <?php
 
-class ProdutoCashbackHomeView
+class ProdutoCategoriaHomeView
 {
     private $validator;
     private $mensagem = [];
     
     public function __construct() {   
 
-        $this->validator = new ProdutoCashbackHomeValidator();
+        $this->validator = new ProdutoCategoriaHomeValidator();
     }
 
     public function exibirSelecionar($responseTransfer)  
@@ -19,14 +19,14 @@ class ProdutoCashbackHomeView
             
             if ($this->validator->validarArrayObjeto($responseTransfer)) {
 
-                $widget = new ProdutoCashbackHomeWidget($responseTransfer);
+                $widget = new ProdutoCategoriaHomeWidget($responseTransfer);
                 $resultado = $widget->visualizarSelecionar();
                 // header('Content-Type: application/json; charset=utf-8');
                 // echo json_encode($relatorio, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
             }
 
         } catch (Exception $e) {
-            $this->mensagem[] = ProdutoCashbackHomeException::incorreto(__METHOD__, 'view.incorreto=' . $e->getMessage());
+            $this->mensagem[] = ProdutoCategoriaHomeException::incorreto(__METHOD__, 'view.incorreto=' . $e->getMessage());
         }
 
         return $resultado;

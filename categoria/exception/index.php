@@ -4,4 +4,4 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 //EXCEPTION
-require 'ProdutoCashbackHomeException.php';
+require 'ProdutoCategoriaHomeException.php';

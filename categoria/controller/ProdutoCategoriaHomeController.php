@@ -2,7 +2,7 @@
 
 
 
-class ProdutoCashbackHomeController
+class ProdutoCategoriaHomeController
 {
     private $validator;
     private $request;
@@ -12,13 +12,13 @@ class ProdutoCashbackHomeController
   
     public function __construct() 
     {   
-        $this->validator = new ProdutoCashbackHomeValidator();
+        $this->validator = new ProdutoCategoriaHomeValidator();
 
-        $requestTransfer = new ProdutoCashbackHomeRequestTransfer();
-        $this->request = new ProdutoCashbackHomeRequest();
+        $requestTransfer = new ProdutoCategoriaHomeRequestTransfer();
+        $this->request = new ProdutoCategoriaHomeRequest();
         $this->requestTransfer = $this->request->build($requestTransfer);
 
-        $this->view = new ProdutoCashbackHomeView();
+        $this->view = new ProdutoCategoriaHomeView();
     }
  
     public function obterSelecionar()
@@ -27,7 +27,7 @@ class ProdutoCashbackHomeController
  
         try { 
 
-            $service = new ProdutoCashbackHomeService($this->requestTransfer);
+            $service = new ProdutoCategoriaHomeService($this->requestTransfer);
 
             if ($this->validator->validarClasseMetodo($service, 'executarSelecionar')) 
             { 
@@ -48,15 +48,15 @@ class ProdutoCashbackHomeController
                     $resultado = $this->view->exibirSelecionar($dadosLista);
 
                 } else {
-                    $this->mensagem[] = ProdutoCashbackHomeException::inexistente(__METHOD__, 'exibirSelecionar.inexistente');
+                    $this->mensagem[] = ProdutoCategoriaHomeException::inexistente(__METHOD__, 'exibirSelecionar.inexistente');
                 }
 
             } else {
-                $this->mensagem[] = ProdutoCashbackHomeException::inexistente(__METHOD__, 'executarSelecionar.inexistente');
+                $this->mensagem[] = ProdutoCategoriaHomeException::inexistente(__METHOD__, 'executarSelecionar.inexistente');
             }
 
         } catch (Exception $e) {
-            $this->mensagem[] = ProdutoCashbackHomeException::incorreto(__METHOD__, 'controller.incorreto=' . $e->getMessage());
+            $this->mensagem[] = ProdutoCategoriaHomeException::incorreto(__METHOD__, 'controller.incorreto=' . $e->getMessage());
         }
 
         return $resultado;
