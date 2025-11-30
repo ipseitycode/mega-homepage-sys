@@ -1,7 +1,5 @@
 <?php
 
-
-
 class ProdutoCategoriaHomeController
 {
     private $validator;
