@@ -2,7 +2,7 @@
 
 class ProdutoImagemHomeMockup
 {
-    public static function pesquisarDados(): array
+    public static function retornarItem(): array
     {
         return [
             'id' => 1,
@@ -20,6 +20,182 @@ class ProdutoImagemHomeMockup
             'alt_text' => 'Banner promocional da loja com destaque para ofertas de 2025',
             'responsiva' => true,
             'ativo' => true
+        ];
+    }
+
+    public static function retornarLista(): array
+    {
+        return [
+            [
+                'id' => 1,
+                'nome' => 'Banner Principal da Loja',
+                'tipo' => 'banner',
+                'arquivo' => 'banner-loja-2025.png',
+                'url' => 'https://cdn.ecommerce-exemplo.com/banners/banner-loja-2025.png',
+                'data_upload' => '2025-01-05 14:32:00',
+                'largura_px' => 1920,
+                'altura_px' => 600,
+                'tamanho_kb' => 850,
+                'formato' => 'png',
+                'cor_predominante' => '#1A73E8',
+                'descricao' => 'Banner promocional utilizado na página inicial da loja.',
+                'alt_text' => 'Banner promocional da loja com destaque para ofertas de 2025',
+                'responsiva' => true,
+                'ativo' => true
+            ],
+            [
+                'id' => 2,
+                'nome' => 'Banner Black Friday',
+                'tipo' => 'banner',
+                'arquivo' => 'banner-black-friday.jpg',
+                'url' => 'https://cdn.ecommerce-exemplo.com/banners/banner-black-friday.jpg',
+                'data_upload' => '2025-11-10 09:15:00',
+                'largura_px' => 1600,
+                'altura_px' => 500,
+                'tamanho_kb' => 720,
+                'formato' => 'jpg',
+                'cor_predominante' => '#000000',
+                'descricao' => 'Banner especial para a campanha de Black Friday.',
+                'alt_text' => 'Black Friday com até 50% de desconto',
+                'responsiva' => true,
+                'ativo' => true
+            ],
+            [
+                'id' => 3,
+                'nome' => 'Logo da Marca',
+                'tipo' => 'logo',
+                'arquivo' => 'logo-marca.svg',
+                'url' => 'https://cdn.ecommerce-exemplo.com/logos/logo-marca.svg',
+                'data_upload' => '2024-12-20 10:00:00',
+                'largura_px' => 300,
+                'altura_px' => 100,
+                'tamanho_kb' => 45,
+                'formato' => 'svg',
+                'cor_predominante' => '#FF5722',
+                'descricao' => 'Logotipo oficial da marca em formato vetorial.',
+                'alt_text' => 'Logo da marca E-commerce Exemplo',
+                'responsiva' => true,
+                'ativo' => true
+            ],
+            [
+                'id' => 4,
+                'nome' => 'Produto Destaque Verão',
+                'tipo' => 'produto',
+                'arquivo' => 'produto-verao-destaque.png',
+                'url' => 'https://cdn.ecommerce-exemplo.com/produtos/produto-verao-destaque.png',
+                'data_upload' => '2025-01-12 16:20:00',
+                'largura_px' => 800,
+                'altura_px' => 800,
+                'tamanho_kb' => 320,
+                'formato' => 'png',
+                'cor_predominante' => '#FFC107',
+                'descricao' => 'Imagem de produto em destaque na coleção de verão.',
+                'alt_text' => 'Camiseta verão 2025 em destaque',
+                'responsiva' => false,
+                'ativo' => true
+            ],
+            [
+                'id' => 5,
+                'nome' => 'Banner Lateral Promoção',
+                'tipo' => 'banner',
+                'arquivo' => 'banner-lateral-promo.jpg',
+                'url' => 'https://cdn.ecommerce-exemplo.com/banners/banner-lateral-promo.jpg',
+                'data_upload' => '2025-02-05 11:45:00',
+                'largura_px' => 300,
+                'altura_px' => 600,
+                'tamanho_kb' => 180,
+                'formato' => 'jpg',
+                'cor_predominante' => '#4CAF50',
+                'descricao' => 'Banner lateral para promoções secundárias.',
+                'alt_text' => 'Promoção especial do mês',
+                'responsiva' => true,
+                'ativo' => false
+            ],
+            [
+                'id' => 6,
+                'nome' => 'Ícone Frete Grátis',
+                'tipo' => 'icone',
+                'arquivo' => 'icone-frete-gratis.svg',
+                'url' => 'https://cdn.ecommerce-exemplo.com/icones/icone-frete-gratis.svg',
+                'data_upload' => '2024-11-30 08:30:00',
+                'largura_px' => 64,
+                'altura_px' => 64,
+                'tamanho_kb' => 8,
+                'formato' => 'svg',
+                'cor_predominante' => '#009688',
+                'descricao' => 'Ícone indicativo de frete grátis.',
+                'alt_text' => 'Ícone de frete grátis',
+                'responsiva' => true,
+                'ativo' => true
+            ],
+            [
+                'id' => 7,
+                'nome' => 'Banner Natal 2025',
+                'tipo' => 'banner',
+                'arquivo' => 'banner-natal-2025.png',
+                'url' => 'https://cdn.ecommerce-exemplo.com/banners/banner-natal-2025.png',
+                'data_upload' => '2025-11-25 13:10:00',
+                'largura_px' => 1920,
+                'altura_px' => 700,
+                'tamanho_kb' => 950,
+                'formato' => 'png',
+                'cor_predominante' => '#D32F2F',
+                'descricao' => 'Banner temático para a campanha de Natal.',
+                'alt_text' => 'Promoção de Natal 2025 com presentes especiais',
+                'responsiva' => true,
+                'ativo' => false
+            ],
+            [
+                'id' => 8,
+                'nome' => 'Foto Categoria Eletrônicos',
+                'tipo' => 'categoria',
+                'arquivo' => 'categoria-eletronicos.jpg',
+                'url' => 'https://cdn.ecommerce-exemplo.com/categorias/categoria-eletronicos.jpg',
+                'data_upload' => '2025-01-08 15:50:00',
+                'largura_px' => 600,
+                'altura_px' => 400,
+                'tamanho_kb' => 280,
+                'formato' => 'jpg',
+                'cor_predominante' => '#2196F3',
+                'descricao' => 'Imagem representativa da categoria eletrônicos.',
+                'alt_text' => 'Categoria de produtos eletrônicos',
+                'responsiva' => true,
+                'ativo' => true
+            ],
+            [
+                'id' => 9,
+                'nome' => 'Banner Mobile App',
+                'tipo' => 'banner',
+                'arquivo' => 'banner-mobile-app.png',
+                'url' => 'https://cdn.ecommerce-exemplo.com/banners/banner-mobile-app.png',
+                'data_upload' => '2025-03-01 10:25:00',
+                'largura_px' => 750,
+                'altura_px' => 400,
+                'tamanho_kb' => 420,
+                'formato' => 'png',
+                'cor_predominante' => '#9C27B0',
+                'descricao' => 'Banner promocional do aplicativo mobile.',
+                'alt_text' => 'Baixe nosso app e ganhe desconto',
+                'responsiva' => true,
+                'ativo' => true
+            ],
+            [
+                'id' => 10,
+                'nome' => 'Selo Segurança SSL',
+                'tipo' => 'selo',
+                'arquivo' => 'selo-seguranca-ssl.png',
+                'url' => 'https://cdn.ecommerce-exemplo.com/selos/selo-seguranca-ssl.png',
+                'data_upload' => '2024-10-15 12:00:00',
+                'largura_px' => 150,
+                'altura_px' => 150,
+                'tamanho_kb' => 55,
+                'formato' => 'png',
+                'cor_predominante' => '#00BCD4',
+                'descricao' => 'Selo de segurança SSL para o rodapé.',
+                'alt_text' => 'Site protegido com certificado SSL',
+                'responsiva' => false,
+                'ativo' => true
+            ]
         ];
     }
 }

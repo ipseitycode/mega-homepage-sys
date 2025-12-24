@@ -13,7 +13,7 @@ class ProdutoCategoriaHomeMockup
             'data_criacao' => '2025-01-05 10:00:00',
             'ativo' => true
         ];
-    }
+    } 
 
     public static function retornarLista(): array
     {
