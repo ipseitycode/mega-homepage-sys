@@ -40,7 +40,7 @@ class ProdutoStartup
             'desconto',
             'economia',
             'frete',
-            'home',
+            // 'home',
             'imagem',
             'lancamento',
             'loja',
@@ -50,8 +50,8 @@ class ProdutoStartup
             'parcela',
             'pesquisa',
             'preco',
-            'subcategoria',
-            'produto'
+            'subcategoria'
+            // 'produto'
         ];
 
         // Configuração de cores para cada tipo (badges)
